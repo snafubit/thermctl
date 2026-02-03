@@ -1,10 +1,9 @@
-// config.h
-// Configuration constants for TempGuard
-
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define TEMP_WARN_C 70
-#define TEMP_CRIT_C 85
+#define DEFAULT_THRESHOLD 80
+#define POLL_INTERVAL 2
+#define LOG_FILE "/tmp/tempguard.log"
+#define MAX_TEMP_PATH 256
 
 #endif
