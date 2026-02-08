@@ -7,6 +7,8 @@ OUT = tempguard
 all:
 	$(CC) $(CFLAGS) $(SRC) -o $(OUT)
 
+run: all
+	./$(OUT)
+
 clean:
 	rm -f $(OUT)
-
