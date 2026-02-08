@@ -1,8 +1,7 @@
 #ifndef THERMAL_H
 #define THERMAL_H
 
-float read_temperature(void);
-int check_threshold(float temp, int threshold);
-void log_temperature(float temp);
+int thermal_read_celsius(float *out_temp_c);
+const char *thermal_sensor_label(void);
 
 #endif
