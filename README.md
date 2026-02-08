@@ -1,3 +1,4 @@
+![TempGuard Banner](assets/banner.png)
 # TempGuard
 
 TempGuard is a lightweight thermal monitoring tool for Linux, written in C.
