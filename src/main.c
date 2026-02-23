@@ -22,24 +22,25 @@ static enum tempguard_exit_code classify_temperature(float temp_c) {
 
 int main(void) {
     float temp_c = 0.0f;
+    const char *sensor = thermal_sensor_label();;
     enum tempguard_exit_code status = EXIT_WARNING;
 
     if (thermal_read_celsius(&temp_c) != 0) {
-        printf("WARNING: unable to read temperature from %s\n", thermal_sensor_label());
+        printf("WARNING: unable to read temperature from %s\n", sensor);
         return EXIT_WARNING;
     }
 
     status = classify_temperature(temp_c);
     switch (status) {
     case EXIT_CRITICAL:
-        printf("CRITICAL: %s temperature %.1f°C\n", thermal_sensor_label(), temp_c);
+        printf("CRITICAL: %s temperature %.1f°C\n", sensor, temp_c);
         break;
     case EXIT_WARNING:
-        printf("WARNING: %s temperature %.1f°C\n", thermal_sensor_label(), temp_c);
+        printf("WARNING: %s temperature %.1f°C\n", sensor, temp_c);
         break;
     case EXIT_OK:
     default:
-        printf("OK: %s temperature %.1f°C\n", thermal_sensor_label(), temp_c);
+        printf("OK: %s temperature %.1f°C\n", sensor, temp_c);
         break;
     }
 
