@@ -1,3 +1,4 @@
+![TempGuard Banner](assets/banner.png)
 # TempGuard
 
 TempGuard is a small Linux CLI tool written in C that reads CPU temperature from sysfs and returns Nagios-style status output (`OK`, `WARNING`, `CRITICAL`) with matching exit codes.
